@@ -102,6 +102,12 @@ main table {
    border-radius: 1.2rem;
    border-collapse: collapse;
    width: 100%;
+
+   table-layout: fixed;
+   border: 1px solid #4A808C;
+
+   overflow: hidden;
+   background-color: #4A808C;
 }
 
 main table thead tr, main table tbody tr {
