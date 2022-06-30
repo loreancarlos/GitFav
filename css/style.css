@@ -10,6 +10,7 @@
    --fc-primary: white;
    --bg-color: black;
    --ff-primary: 'Roboto', sans-serif;
+   --color-border: #4A808C;
 }
 
 .sr-only {
@@ -94,68 +95,114 @@ main {
    width: 100%;
 }
 
+.table-wrapper {
+   overflow: hidden;
+
+   border-radius: 1.2rem;
+   border: 1px solid var(--color-border);
+}
+
 main table {
    font-weight: 700;
    font-size: 2.0rem;
    text-align: left;
+   display: flex;
+   flex-direction: column;
 
-   border-radius: 1.2rem;
    border-collapse: collapse;
    width: 100%;
 }
 
-main table thead tr, main table tbody tr {
-   border: 1px solid #4A808C;
+main table * {
+   color: #E1E1E6;
 }
 
-main table tr th {
-   padding: 1.6rem 0 1.6rem 4.0rem;
-}
+main table thead {
+   display: flex;
 
-
-main table thead tr th {
+   width: 100%;
    background-color: #092D38;
 }
 
-main table thead tr:first-child th:first-child {
-   border-top-left-radius: 1.2rem;
-}
+main table tbody {
+   display: flex;
+   flex-direction: column;
 
-main table thead tr:first-child th:last-child {
-   border-top-right-radius: 1.2rem;
-}
-
-main table tbody tr:last-child td:first-child {
-   border-bottom-left-radius: 1.2rem;
-}
-
-main table tbody tr:last-child td:last-child {
-   border-bottom-right-radius: 1.2rem;
-}
-
-main table tbody tr:nth-child(even) {
-   background-color: #06181C;
-}
-
-main table tbody tr:nth-child(odd) {
+   width: 100%;
+   height: 62.4rem;
    background-color: rgba(6, 22, 27, 0.5);
+}
+
+.scroll-y {
+   overflow-y: scroll;
+}
+
+tbody::-webkit-scrollbar {
+   height: 1.5rem;
+   width: 0.8rem;
+}
+
+tbody::-webkit-scrollbar-track {
+   background: transparent;
+}
+
+tbody::-webkit-scrollbar-thumb {
+   background-color: var(--color-border);
+   border-radius: 1rem;
+}
+
+main table thead tr, main table tbody tr {
+   display: flex;
+   align-items: center;
+   width: 100%;
+}
+
+main table thead tr th:first-child, main table tbody tr td:first-child {
+   max-width: 50.0rem;
+   min-width: 23.5rem;
+   width: 100%;
+}
+
+main table thead tr th:nth-child(2), main table tbody tr td:nth-child(2) {
+   flex: 1;
+   min-width: 18rem;
+}
+
+main table thead tr th:nth-child(3), main table tbody tr td:nth-child(3) {
+   flex: 1;
+   min-width: 18rem;
+}
+
+main table thead tr th:nth-child(4), main table tbody tr td:nth-child(4) {
+   flex: 1;
+   min-width: 18rem;
+}
+
+main table thead tr th {
+   padding: 1.6rem 0 1.6rem 4.0rem;
 }
 
 main table tbody tr td {
    padding: 2.4rem 0 2.4rem 4.0rem;
 }
 
-main table tbody tr td:first-child {
+main table tbody tr:nth-child(even) {
+   background-color: #06181C;
+   border-top: 1px solid var(--color-border);
+   border-bottom: 1px solid var(--color-border);
+}
+
+main table tbody tr td img {
+   border-radius: 50%;
+
+   width: 5.6rem;
+   height: 5.6rem;
+}
+
+main table tbody tr td .user-wrapper {
    display: flex;
    align-items: center;
    gap: 1.6rem;
-
-   width: 45%;
-}
-
-main table tbody tr td:last-child p {
-   color: #F75A68;
-   cursor: pointer;
 }
 
 .name-wrapper {
@@ -164,14 +211,16 @@ main table tbody tr td:last-child p {
    gap: 0.8rem;
 }
 
+.name-wrapper a {
+   text-decoration: none;
+}
+
 .name-wrapper p:last-child {
    font-weight: 400;
    font-size: 2.0rem;
 }
 
-main table tbody tr td img {
-   border-radius: 50%;
-
-   width: 5.6rem;
-   height: 5.6rem;
+main table tbody tr td:last-child p {
+   color: #F75A68;
+   cursor: pointer;
 }
