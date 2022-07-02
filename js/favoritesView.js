@@ -27,6 +27,8 @@ export class FavoritesView extends Favorites {
          };
          this.tbody.append(row);
       });
+      !this.favAccounts.length ? this.tbody.style.backgroundImage = "url('../img/backgroundTable.svg')" : this.tbody.style.backgroundImage = "none";
+      this.favAccounts.length > 5 ? this.tbody.classList.add("scroll-y") : this.tbody.classList.remove("scroll-y");
    }
 
    createRow() {
@@ -64,6 +66,7 @@ export class FavoritesView extends Favorites {
 
       buttonSearch.onclick = () => {
          const { value } = inputSearch;
+         inputSearch.value = "";
          this.add(value);
       };
 

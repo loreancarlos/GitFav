@@ -23,16 +23,11 @@ export class Favorites {
             throw new Error("Este usuário não existe");
          }
 
-         this.isAdded = false;
          this.favAccounts.forEach(account => {
             if (user.login.toLowerCase() == account.login.toLowerCase()) {
-               this.isAdded = true;
+               throw new Error("Este usuário já foi favoritado.");
             }
          });
-
-         if (this.isAdded == true) {
-            throw new Error("Este usuário já foi favoritado.");
-         }
 
          this.favAccounts = [user, ...this.favAccounts];
          this.update();
